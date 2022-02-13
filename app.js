@@ -2,11 +2,13 @@ let number=document.getElementById("number");
 let check=document.getElementById("check");
 let try1=document.getElementById("try1");
 let button1=document.getElementById("button1");
-let number1= Math.floor(Math.random() * 101);
+let number1= 50/*  Math.floor(Math.random() * 101) */;
 let attemps=document.getElementById("attemps");
 let h2=document.getElementById("h2")
 let h3=document.getElementById("h3")
-console.log();
+let list1=[0,100]
+let x;
+
 check.addEventListener("click", ()=>{
     if (number.value==number1) {
         h2.style.fontSize="1.5rem";
@@ -17,7 +19,10 @@ check.addEventListener("click", ()=>{
     }
     else if (number.value>number1){
         h2.style.fontSize="1.5rem";
-        h2.innerText=`Please enter a smaller number, between 0 and ${number.value}`
+        list1.push(number.value);
+        list1.sort(function(a, b){return a - b});
+        x = list1.indexOf(number.value);
+        h2.innerText=`Please enter a smaller number, between ${list1[x-1]} and ${list1[x]} `
         try1.innerText=Number(try1.innerText)-1
         if(try1.innerText==0){
             h2.innerText= `Sorry, you failed. The number is ${number1}`;
@@ -29,7 +34,10 @@ check.addEventListener("click", ()=>{
     }
     else if (number.value<number1){
         h2.style.fontSize="1.5rem";
-        h2.innerText=`Please enter a greater number, between ${number.value} and 100`
+        list1.push(number.value);
+        list1.sort(function(a, b){return a - b});
+        x = list1.indexOf(number.value);
+        h2.innerText=`Please enter a greater number, between ${list1[x]} and ${list1[x+1]} `
         try1.innerText=Number(try1.innerText)-1
         if(try1.innerText==0){
             h2.innerText= `Sorry, you failed. The number is ${number1}`;
@@ -40,8 +48,9 @@ check.addEventListener("click", ()=>{
         }
         
     }
-    }
+}
 )
+
 button1.addEventListener("click", ()=>{
     try1.innerText="10";
     attemps.style.display = "flex";
