@@ -10,7 +10,7 @@ console.log();
 check.addEventListener("click", ()=>{
     if (number.value==number1) {
         h2.style.fontSize="1.5rem";
-        h2.innerText=`Congrats, you found the number on your ${11-Number(try1.innerText)} attempt`;
+        h2.innerText=`Congrats, you found the chosen number ${number1} on your ${11-Number(try1.innerText)}. attempt`;
         attemps.style.display = "none";
         button1.style.display = "block";
 
@@ -20,9 +20,10 @@ check.addEventListener("click", ()=>{
         h2.innerText=`Please enter a smaller number, between 0 and ${number.value}`
         try1.innerText=Number(try1.innerText)-1
         if(try1.innerText==0){
-            h2.innerText="Sorry, you failed."
+            h2.innerText= `Sorry, you failed. The number is ${number1}`;
             attemps.style.display = "none";
             button1.style.display = "block";
+            number.value=""
     
         }
     }
@@ -31,9 +32,10 @@ check.addEventListener("click", ()=>{
         h2.innerText=`Please enter a greater number, between ${number.value} and 100`
         try1.innerText=Number(try1.innerText)-1
         if(try1.innerText==0){
-            h2.innerText="Sorry, you failed."
+            h2.innerText= `Sorry, you failed. The number is ${number1}`;
             attemps.style.display = "none";
             button1.style.display = "block";
+            number.value=""
     
         }
         
@@ -43,6 +45,8 @@ check.addEventListener("click", ()=>{
 button1.addEventListener("click", ()=>{
     try1.innerText="10";
     attemps.style.display = "flex";
+    button1.style.display = "none";
+    h2.innerText="Write the number"
     })
 
 
