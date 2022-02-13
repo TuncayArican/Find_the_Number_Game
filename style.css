@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body,
+img{
+    background-color:coral
+}
+#h1{
+    margin: 3rem 0px;
+    text-align: center;
+}
+#guess{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#image{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#attemps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#check{
+    background-color: aqua;
+    padding: 0.5rem;
+}
+#number{
+    padding: 0.3rem;
+}
+#button{
+    text-align: center;
+    margin-top: 1rem;
+}
+#button1{
+    display: none;
+    margin: auto;
+    background-color: blue;
+    padding: 0.5rem;
+    color: white;
+}
