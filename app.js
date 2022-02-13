@@ -15,6 +15,7 @@ check.addEventListener("click", ()=>{
         h2.innerText=`Congrats, you found the chosen number ${number1} on your ${11-Number(try1.innerText)}. attempt`;
         attemps.style.display = "none";
         button1.style.display = "block";
+        number.value=""
 
     }
     else if (number.value>number1){
