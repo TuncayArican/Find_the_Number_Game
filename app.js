@@ -57,6 +57,7 @@ button1.addEventListener("click", ()=>{
     attemps.style.display = "flex";
     button1.style.display = "none";
     h2.innerText="Write the number"
+    list1=[0,100]
     })
 
 
